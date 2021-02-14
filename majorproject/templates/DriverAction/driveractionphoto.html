@@ -1,0 +1,31 @@
+{% extends 'DriverAction/base.html' %}
+{% block content %}
+   <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Photo Analysis</h2>
+          <p>Get analysis on the safety of lane change</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form method = "post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Upload</button>
+            </form>
+
+          </div>
+
+        </div>
+
+              <label for="SummarizedText">Analysis</label>
+              <textarea readonly class="form-control" id="SummarizedText" rows="3" name="SummarizedText" placeholder="Text">{{ summarised_text }}</textarea>
+
+
+      </div>
+    </section>
+{% endblock %}
